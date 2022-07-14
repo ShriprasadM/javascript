@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RGB Player</title>
+    <script>
+
+        function change() {
+            let body = document.getElementById("result");
+            let result = document.getElementById("result");
+            let block = document.getElementById("block");
+            // let body = document.getElementByTagName("body");
+            let colorCount = 0;
+            for (let r = 0; r <= 255; r++) {
+                for (let g = 0; g <= 255; g++) {
+                    for (let b = 0; b <= 255; b++) {
+                        setTimeout(function () {
+                            body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+                            colorCount++;
+                            result.innerHTML = "change me shriprasad: Rendered " + colorCount;
+                            let child = document.createElement("div");
+                            child.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+                            child.style.width = "10px";
+                            child.style.height = "10px";
+                            child.style.float = "left";
+                            block.appendChild(child);
+                        }, 0);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body id="shri" onload="change()">
+    <div style="border: 1px solid rgb(253, 253, 253); ">
+        <h1 id="result"> change me shriprasad: </h1>
+    </div>
+    <div id="block" style="overflow: hidden"></div>
+</body>
+
+</html>
